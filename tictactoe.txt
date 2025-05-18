@@ -1,0 +1,44 @@
+Basic windows app
+import tkinter as tk
+window = tk.Tk()
+window.mainloop()
+
+logic of tic tac toe
+nine spaces, 3x3 grid first to match 3 in vertical, horizontal or diagonal
+
+Opinion 1: We can give each grid its number and print out that when prompted by the user
+At the start:
+###    ###    ###    ### 
+### to ##X to ##X to #OX
+###    ###    ###    ### 
+First print out a 3x3 hastag and prompt user 1 to enter then print out what the user entered then prompt user 2. Victory condition will be checked each round before either player is prompted.
+
+Implementation of Opinion 1!
+Potential improvement idea: Make it an array so that array values can be changed by user input
+Starting state
+    Print out a 3x3 # tower
+    if there is no winner or a draw continue
+    Take input from user 1
+    print("User 1 Choose a number between 0 and 8:")
+    user1 = input() 
+    User 1 input will always turn a selected space into a X 
+    If they chose 5 it will be 
+    ###
+    #X#
+    ###
+    If the object in the position spesisied isn't X or O then we can continue if not the user will try again
+    Can't do else because they can miss the first one then go for the second one and it won't be checked
+    # Show user1 input on the board
+    for i in range(3):
+        print("###") 
+Victory condition
+if match three then exit the loop
+Need to check between users as well
+XO#
+#XO
+##X
+s[0]+s[1]+s[2]
+s[3]+s[4]+s[5]
+s[6]+s[7]+s[8]
+Option 1 write a victory case for each option
+Option 2 Winning strings: 0,4,8 - 2,4,6 - 2,5,8 - 0,1,2 - 3,4,5 - 6,7,8
