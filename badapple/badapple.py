@@ -57,10 +57,6 @@
 import cv2
 import numpy as np
 
-def move_cursor_to_top():
-    # ANSI escape code for cursor home position
-    print("\033[H", end="")
-
 def ascii(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     threshold_level = 50
@@ -72,10 +68,9 @@ def ascii(image):
     for y, x in black_pixel_coordinates:
         if 0 <= x < output_width and 0 <= y < output_height:
             ascii_canvas[int(y/5)][int(x/5)] = char_for_black
-    move_cursor_to_top()
+    
     for row in ascii_canvas:
         print("".join(row))
-    
 
 video_path = 'C:\\Users\\revas\\Source\\Repos\\funlittleprojects\\badapple\\BadAppleOriginal.mp4'
 cap = cv2.VideoCapture(video_path)

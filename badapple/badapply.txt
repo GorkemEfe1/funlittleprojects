@@ -1,0 +1,6 @@
+def move_cursor_to_top():
+    # ANSI escape code for cursor home position
+    print("\033[H", end="")
+
+before printing output
+move_cursor_to_top()
