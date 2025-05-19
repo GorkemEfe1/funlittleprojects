@@ -18,7 +18,7 @@ def ascii(image):
     char_for_black = '#'
     for y, x in black_pixel_coordinates:
         if 0 <= x < output_width and 0 <= y < output_height:
-            ascii_canvas[int(y/3)][int(x/2)] = char_for_black
+            ascii_canvas[int(y/4)][int(x/2)] = char_for_black
     os.system('cls')
     for row in ascii_canvas:
         print("".join(row))
