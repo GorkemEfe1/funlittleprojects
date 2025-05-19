@@ -1,9 +1,11 @@
 import random
+inputHandling = ["0","1","2","3","4","5","6","7","8"]
+zerotoeight = ["0","1","2","3","4","5","6","7","8"]
 arr = [{0,3,6} , {0,1,2} , {0,4,8} , {1,4,7} , {2,4,6} , {2,5,8} , {3,4,5} , {6,7,8}] 
 s = []
 winX = []
 winO = []
-inputHandling = ["0","1","2","3","4","5","6","7","8"]
+
 for i in range(9):
     s.append("#")
 print(s[0]+s[1]+s[2] + "\n" + s[3]+s[4]+s[5] +"\n" + s[6]+s[7]+s[8])
@@ -20,6 +22,7 @@ def userAction(user):
                     string_val = "X"
                     s[int(index)] = string_val
                     winX.append(int(index)) # Number entered
+                    zerotoeight.remove(index)
                     break
                 if (user == 2):
                     string_val = "O"
@@ -48,14 +51,25 @@ def tictactoe(s, arr, winX, winO):
         if "#" not in s:
             print("Draw")
             return True
-        userAction(2)
+        print("User2:")
+        selected_item = random.choice(zerotoeight)
+        zerotoeight.remove(selected_item)
+        string_val = "O"
+        s[int(selected_item)] = string_val
+        winO.append(int(selected_item))
         print(s[0]+s[1]+s[2] + "\n" + s[3]+s[4]+s[5] +"\n" + s[6]+s[7]+s[8])
         done = wincheck(i, arr, winX, winO)
         if done:
             return True                    
 tictactoe(s, arr, winX, winO) 
 
+
+
+
 # Random ai
 # Will act as user 2 and will put an O in a random location
 # First we need to generate a random number between 0 and 8
 # or make an array including all numbers between 0 and 8 then cross of or simply remove the ones that have been used either by the player or the ai
+
+    # Change it in s
+    # append it to the winO
