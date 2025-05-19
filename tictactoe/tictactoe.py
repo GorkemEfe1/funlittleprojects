@@ -52,11 +52,12 @@ def tictactoe(s, arr, winX, winO):
             print("Draw")
             return True
         print("User2:")
-        selected_item = random.choice(zerotoeight)
-        zerotoeight.remove(selected_item)
-        string_val = "O"
-        s[int(selected_item)] = string_val
-        winO.append(int(selected_item))
+        # selected_item = random.choice(zerotoeight)
+        # zerotoeight.remove(selected_item)
+        # string_val = "O"
+        # s[int(selected_item)] = string_val
+        # winO.append(int(selected_item))
+        userAction(2)
         print(s[0]+s[1]+s[2] + "\n" + s[3]+s[4]+s[5] +"\n" + s[6]+s[7]+s[8])
         done = wincheck(i, arr, winX, winO)
         if done:
