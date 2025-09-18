@@ -110,7 +110,7 @@ def play_ascii_animation(all_frames_pixel_coords, target_fps):
 def main():
     start_time = time.time() # Overall script start time
 
-    video_path = 'C:\\Users\\revas\\Source\\Repos\\funlittleprojects\\badapple\\BadAppleOriginal.mp4'
+    video_path = 'C:\\Users\\revas\\OneDrive\\Documents\\GitHub\\funlittleprojects\\badapple\\Cheetah.mp4'
     cap = cv2.VideoCapture(video_path)
 
     if not cap.isOpened():
